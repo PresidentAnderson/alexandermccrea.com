@@ -23,8 +23,16 @@ script block; move the font `<link>` into `<head>`; replace every `{{accent}}` w
 
 ## Deploy
 
-Hosted on Vercel (team `axaiinovation`, project `alexandermccrea-com`) as a static site with no framework.
-Any file in the repo root is served as-is.
+Hosted on **GitHub Pages**, served straight from the `main` branch root (no build step, `.nojekyll` present).
+Every push to `main` republishes within about a minute.
+
+- Live URL: https://presidentanderson.github.io/alexandermccrea.com/
+- Repo: https://github.com/PresidentAnderson/alexandermccrea.com (public; GitHub Pages on a private repo needs a paid plan)
+- Custom domain: add a `CNAME` file containing the domain to the repo root and point the domain's DNS at GitHub Pages
+  (`CNAME` record for `www` to `presidentanderson.github.io`, or the four Pages A records for the apex). Not done yet
+  (see "Known gaps" 5).
+
+The Vercel team `axaiinovation` was tried first and refused (account suspended for billing, HTTP 402).
 
 ## Known gaps (as of 2026-10-10)
 
