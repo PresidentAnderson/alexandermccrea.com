@@ -44,6 +44,8 @@ The Vercel team `axaiinovation` was tried first and refused (account suspended f
 4. **Preview vs. artboard.** `design/alexmcrae-preview.png` shows a version with an EN/FR language toggle and a
    "LEFT-OF-CENTRE CAMPAIGNS" eyebrow. No French copy exists in this repo. The artboard (and therefore `index.html`)
    is English only; the eyebrow wording was taken from the preview.
-5. **Domain.** Live on `alexmccrea.com`. The repo is still named `alexandermccrea.com` (that domain is unregistered)
-   and the design canvas is titled `alexmcrae.com` (owned by someone else).
+5. **Domain.** Live on `alexmccrea.com`. The repo keeps the name `alexandermccrea.com` on purpose: that domain is
+   planned as the second name for the same site (not yet registered as of 2026-10-10). GitHub Pages takes one custom
+   domain per site, so the second domain will be a redirect at Cloudflare to whichever is primary. The design canvas
+   title `alexmcrae.com` is a third spelling owned by someone else.
 6. **Privacy link** in the footer points to `#top`; there is no privacy page.
