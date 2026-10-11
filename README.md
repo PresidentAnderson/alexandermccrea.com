@@ -26,11 +26,11 @@ script block; move the font `<link>` into `<head>`; replace every `{{accent}}` w
 Hosted on **GitHub Pages**, served straight from the `main` branch root (no build step, `.nojekyll` present).
 Every push to `main` republishes within about a minute.
 
-- Live URL: https://presidentanderson.github.io/alexandermccrea.com/
+- Live URL: https://alexmccrea.com/ (also https://www.alexmccrea.com/; the github.io address redirects there)
 - Repo: https://github.com/PresidentAnderson/alexandermccrea.com (public; GitHub Pages on a private repo needs a paid plan)
-- Custom domain: add a `CNAME` file containing the domain to the repo root and point the domain's DNS at GitHub Pages
-  (`CNAME` record for `www` to `presidentanderson.github.io`, or the four Pages A records for the apex). Not done yet
-  (see "Known gaps" 5).
+- Custom domain: `alexmccrea.com`, set 2026-10-10. The `CNAME` file in the repo root holds it; DNS at Cloudflare
+  (zone cd50840b3a2d9651a6d279a956a92829) has four A records on the apex to GitHub Pages and a `www` CNAME to
+  `presidentanderson.github.io`, all DNS-only (not proxied) so GitHub can issue the certificate.
 
 The Vercel team `axaiinovation` was tried first and refused (account suspended for billing, HTTP 402).
 
@@ -44,6 +44,6 @@ The Vercel team `axaiinovation` was tried first and refused (account suspended f
 4. **Preview vs. artboard.** `design/alexmcrae-preview.png` shows a version with an EN/FR language toggle and a
    "LEFT-OF-CENTRE CAMPAIGNS" eyebrow. No French copy exists in this repo. The artboard (and therefore `index.html`)
    is English only; the eyebrow wording was taken from the preview.
-5. **Domain.** Three spellings are in circulation: this folder/repo (`alexandermccrea.com`), the design canvas title
-   (`alexmcrae.com`) and the person's name (McCrea). No custom domain is attached yet.
+5. **Domain.** Live on `alexmccrea.com`. The repo is still named `alexandermccrea.com` (that domain is unregistered)
+   and the design canvas is titled `alexmcrae.com` (owned by someone else).
 6. **Privacy link** in the footer points to `#top`; there is no privacy page.
