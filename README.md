@@ -39,7 +39,7 @@ The Vercel team `axaiinovation` was tried first and refused (account suspended f
 1. **Contact email.** The form composes a `mailto:` link from the fields. The address is the `data-email`
    attribute on `<form id="contact-form">` and is still the placeholder `[EMAIL]`; the same placeholder appears in
    the "write to me directly" line. Until it is filled in the form goes nowhere.
-2. **Placeholder copy.** 24 bracketed placeholders remain in `index.html`: the three "My story" paragraphs, the
+2. **Placeholder copy.** 23 bracketed placeholders remain in `index.html`: the three "My story" paragraphs, the
    three campaign cards (`[YEAR] · [RACE]`, `[CANDIDATE NAME]`, description), the testimonial and its attribution,
    and the footer `[LINKEDIN]` / `[SOCIAL]` links (which currently point to `#top`).
 3. **Photo.** See `assets/` note above. The hero slot is square; a 4:5 portrait will also work (`aspect-ratio` on the `<img>`).
