@@ -45,9 +45,12 @@ The Vercel team `axaiinovation` was tried first and refused (account suspended f
    three campaign cards (`[YEAR] · [RACE]`, `[CANDIDATE NAME]`, description), the testimonial and its attribution,
    and the footer `[LINKEDIN]` / `[SOCIAL]` links (which currently point to `#top`).
 3. ~~Photo~~ — replaced 2026-10-30 with the 1000×1000 original (from the `alexmcrae-site` bundle).
-4. **Preview vs. artboard.** `design/alexmcrae-preview.png` shows a version with an EN/FR language toggle and a
-   "LEFT-OF-CENTRE CAMPAIGNS" eyebrow. No French copy exists in this repo. The artboard (and therefore `index.html`)
-   is English only; the eyebrow wording was taken from the preview.
+4. ~~French~~ — added 2026-10-30. EN/FR toggle in the header. English copy is the HTML itself; French is the `FR`
+   table in the script at the bottom of `index.html`, matched by each element's `data-i18n` key (copied from the
+   `alexmcrae-site` bundle, plus French written for the Campaigns heading, direct-email line and footer). When you
+   change an English line, change its French line too. The page opens in `?lang=fr|en`, else the visitor's last
+   choice, else their browser language. The bracketed placeholders are not translated; add French for them when the
+   real copy arrives.
 5. **Domain.** `alexandermccrea.com` is primary; `alexmccrea.com` redirects to it (see Deploy). The design canvas
    title `alexmcrae.com` is a third spelling owned by someone else (Porkbun) and is not connected.
 6. **Privacy link** in the footer points to `#top`; there is no privacy page.

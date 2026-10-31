@@ -17,6 +17,10 @@ html{scroll-behavior: smooth; -webkit-text-size-adjust: 100%}
 body{margin:0}
 a{color:#17181C}a:hover{color:#4A4D57}
 :focus-visible{outline: 3px solid #F5B700; outline-offset: 3px}
+.lang{display:flex;border:2px solid #17181C;border-radius:999px;overflow:hidden}
+.lang button{font:inherit;font-weight:700;font-size:15px;min-width:48px;min-height:44px;padding:0 14px;background:#FFFFFF;color:#17181C;border:0;cursor:pointer}
+.lang button[aria-pressed="true"]{background:#17181C;color:#FFFFFF}
+.lang button:focus-visible{outline-offset:-5px}
 </style>
 </head>
 <body>
@@ -26,23 +30,27 @@ a{color:#17181C}a:hover{color:#4A4D57}
 <div style="max-width: 1160px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; font-family: 'Bricolage Grotesque', sans-serif">
 <a href="#top" style="font-weight: 800; font-size: 24px; letter-spacing: -0.02em; text-decoration: none; color: #17181C">Alexander McCrea</a>
 <nav aria-label="Primary" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 26px; font-size: 16px; font-weight: 500">
-<a href="#story" style="text-decoration: none; padding: 12px 0">Why I do this</a>
-<a href="#journey" style="text-decoration: none; padding: 12px 0">The road to election day</a>
-<a href="#help" style="text-decoration: none; padding: 12px 0">How I help</a>
-<a href="#campaigns" style="text-decoration: none; padding: 12px 0">Campaigns</a>
-<a href="#contact" style="text-decoration: none; background: #17181C; color: #FFFFFF; padding: 12px 20px; border-radius: 999px; font-weight: 700">Talk to me</a>
+<a href="#story" data-i18n="nav.story" style="text-decoration: none; padding: 12px 0">Why I do this</a>
+<a href="#journey" data-i18n="nav.journey" style="text-decoration: none; padding: 12px 0">The road to election day</a>
+<a href="#help" data-i18n="nav.help" style="text-decoration: none; padding: 12px 0">How I help</a>
+<a href="#campaigns" data-i18n="nav.campaigns" style="text-decoration: none; padding: 12px 0">Campaigns</a>
+<a href="#contact" style="text-decoration: none; background: #17181C; color: #FFFFFF; padding: 12px 20px; border-radius: 999px; font-weight: 700" data-i18n="nav.cta">Talk to me</a>
+<div class="lang" role="group" aria-label="Language / Langue">
+<button type="button" data-lang="en" lang="en" aria-pressed="true" aria-label="English">EN</button>
+<button type="button" data-lang="fr" lang="fr" aria-pressed="false" aria-label="Français">FR</button>
+</div>
 </nav>
 </div>
 </header>
 
 <section id="top" style="max-width: 1160px; margin: 0 auto; padding: 80px 24px 88px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
 <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px; align-items: flex-start">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; background: #F5B700; padding: 6px 12px">Left-of-centre campaigns</span>
-<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(46px, 7.4vw, 100px); line-height: 0.95; letter-spacing: -0.035em">So you want to run. Let's get you elected.</h1>
-<p style="margin: 0; max-width: 580px; font-size: 22px; line-height: 1.5">I'm Alexander McCrea. I specialize in left-of-centre campaigns, and I stay beside candidates from "I think I should run" to election night.</p>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; background: #F5B700; padding: 6px 12px" data-i18n="hero.tag">Left-of-centre campaigns</span>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(46px, 7.4vw, 100px); line-height: 0.95; letter-spacing: -0.035em" data-i18n="hero.h1">So you want to run. Let's get you elected.</h1>
+<p style="margin: 0; max-width: 580px; font-size: 22px; line-height: 1.5" data-i18n="hero.p">I'm Alexander McCrea. I specialize in left-of-centre campaigns, and I stay beside candidates from "I think I should run" to election night.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; font-family: 'Bricolage Grotesque', sans-serif">
-<a href="#contact" style="text-decoration: none; background: #F5B700; color: #17181C; padding: 16px 28px; border: 2px solid #17181C; border-radius: 999px; font-weight: 700; font-size: 18px">Tell me about your race</a>
-<a href="#journey" style="text-decoration: none; padding: 16px 26px; border: 2px solid #17181C; border-radius: 999px; font-weight: 700; font-size: 18px; color: #17181C">See the road ahead</a>
+<a href="#contact" style="text-decoration: none; background: #F5B700; color: #17181C; padding: 16px 28px; border: 2px solid #17181C; border-radius: 999px; font-weight: 700; font-size: 18px" data-i18n="hero.b1">Tell me about your race</a>
+<a href="#journey" style="text-decoration: none; padding: 16px 26px; border: 2px solid #17181C; border-radius: 999px; font-weight: 700; font-size: 18px; color: #17181C" data-i18n="hero.b2">See the road ahead</a>
 </div>
 </div>
 <div style="flex: 1 1 320px; min-width: 0">
@@ -53,114 +61,114 @@ a{color:#17181C}a:hover{color:#4A4D57}
 <section id="story" style="background: #17181C; color: #FFFFFF">
 <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 56px">
 <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; background: #F5B700; color: #17181C; padding: 6px 12px">My story</span>
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.02; letter-spacing: -0.03em">Why I do this</h2>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; background: #F5B700; color: #17181C; padding: 6px 12px" data-i18n="story.tag">My story</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.02; letter-spacing: -0.03em" data-i18n="story.h2">Why I do this</h2>
 </div>
 <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px; font-size: 21px; color: #E9E8E3">
 <p style="margin: 0">[Alexander, in your own words: the moment politics got hold of you. A door you knocked on, a night you remember, a person who pulled you in.]</p>
 <p style="margin: 0">[What you have done since. The campaigns, the roles, what you learned the hard way.]</p>
 <p style="margin: 0">[Why you would rather help someone else win than run yourself, and what kind of candidate you want to work with.]</p>
-<p style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.25; color: #FFFFFF; border-top: 1px solid #4A4D57; padding-top: 28px">Good people talk themselves out of running every day. My job is to make sure the ones who should run, do, and that they don't do it alone.</p>
+<p style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.25; color: #FFFFFF; border-top: 1px solid #4A4D57; padding-top: 28px" data-i18n="story.creed">Good people talk themselves out of running every day. My job is to make sure the ones who should run, do, and that they don't do it alone.</p>
 </div>
 </div>
 </section>
 
 <section id="journey" style="max-width: 1160px; margin: 0 auto; padding: 104px 24px 96px; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start; max-width: 780px">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; background: #F5B700; padding: 6px 12px">The road to election day</span>
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.02; letter-spacing: -0.03em">From "should I run?" to election night</h2>
-<p style="margin: 0">Every candidate walks the same road. Here is each stop, what it asks of you, and where I come in.</p>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; background: #F5B700; padding: 6px 12px" data-i18n="j.tag">The road to election day</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.02; letter-spacing: -0.03em" data-i18n="j.h2">From "should I run?" to election night</h2>
+<p style="margin: 0" data-i18n="j.p">Every candidate walks the same road. Here is each stop, what it asks of you, and where I come in.</p>
 </div>
 
 <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-top: 2px solid #17181C">
 <li style="display: flex; flex-wrap: wrap; gap: 20px 40px; padding: 36px 0; border-bottom: 1px solid #C9C8C2">
 <div aria-hidden="true" style="flex: 0 0 64px; height: 64px; background: #F5B700; border: 2px solid #17181C; border-radius: 50%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px">1</div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em">Deciding to run</h3>
-<p style="margin: 0">You care about something enough to put your name on a ballot. You are not sure you can win, or what it will cost you.</p>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em" data-i18n="s1.h">Deciding to run</h3>
+<p style="margin: 0" data-i18n="s1.you">You care about something enough to put your name on a ballot. You are not sure you can win, or what it will cost you.</p>
 </div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57">Where I come in</div>
-<p style="margin: 0">An honest read on the race: whether it is winnable, and what it takes in time, money and family.</p>
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57" data-i18n="lab">Where I come in</div>
+<p style="margin: 0" data-i18n="s1.me">An honest read on the race: whether it is winnable, and what it takes in time, money and family.</p>
 </div>
 </li>
 <li style="display: flex; flex-wrap: wrap; gap: 20px 40px; padding: 36px 0; border-bottom: 1px solid #C9C8C2">
 <div aria-hidden="true" style="flex: 0 0 64px; height: 64px; background: #F5B700; border: 2px solid #17181C; border-radius: 50%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px">2</div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em">Choosing your lane</h3>
-<p style="margin: 0">A party, or your own platform. Which one fits what you believe, and which one gives you a real path to the seat.</p>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em" data-i18n="s2.h">Choosing your lane</h3>
+<p style="margin: 0" data-i18n="s2.you">A party, or your own platform. Which one fits what you believe, and which one gives you a real path to the seat.</p>
 </div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57">Where I come in</div>
-<p style="margin: 0">We weigh the options together, then I introduce you to the organizers and local associations you need to know.</p>
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57" data-i18n="lab">Where I come in</div>
+<p style="margin: 0" data-i18n="s2.me">We weigh the options together, then I introduce you to the organizers and local associations you need to know.</p>
 </div>
 </li>
 <li style="display: flex; flex-wrap: wrap; gap: 20px 40px; padding: 36px 0; border-bottom: 1px solid #C9C8C2">
 <div aria-hidden="true" style="flex: 0 0 64px; height: 64px; background: #F5B700; border: 2px solid #17181C; border-radius: 50%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px">3</div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em">Winning the nomination</h3>
-<p style="margin: 0">Before the voters choose you, the members do. That means signing people up and getting them into the room on the night.</p>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em" data-i18n="s3.h">Winning the nomination</h3>
+<p style="margin: 0" data-i18n="s3.you">Before the voters choose you, the members do. That means signing people up and getting them into the room on the night.</p>
 </div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57">Where I come in</div>
-<p style="margin: 0">The membership drive, the count, and a turnout plan for nomination night. Running as an independent? We go straight to step 4.</p>
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57" data-i18n="lab">Where I come in</div>
+<p style="margin: 0" data-i18n="s3.me">The membership drive, the count, and a turnout plan for nomination night. Running as an independent? We go straight to step 4.</p>
 </div>
 </li>
 <li style="display: flex; flex-wrap: wrap; gap: 20px 40px; padding: 36px 0; border-bottom: 1px solid #C9C8C2">
 <div aria-hidden="true" style="flex: 0 0 64px; height: 64px; background: #F5B700; border: 2px solid #17181C; border-radius: 50%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px">4</div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em">Building your team</h3>
-<p style="margin: 0">A campaign manager, someone to handle the money, volunteers, and a reason for people to vote for you that fits in one breath.</p>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em" data-i18n="s4.h">Building your team</h3>
+<p style="margin: 0" data-i18n="s4.you">A campaign manager, someone to handle the money, volunteers, and a reason for people to vote for you that fits in one breath.</p>
 </div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57">Where I come in</div>
-<p style="margin: 0">I help you find the people, write the plan and the budget, and shape your story so it sounds like you.</p>
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57" data-i18n="lab">Where I come in</div>
+<p style="margin: 0" data-i18n="s4.me">I help you find the people, write the plan and the budget, and shape your story so it sounds like you.</p>
 </div>
 </li>
 <li style="display: flex; flex-wrap: wrap; gap: 20px 40px; padding: 36px 0; border-bottom: 1px solid #C9C8C2">
 <div aria-hidden="true" style="flex: 0 0 64px; height: 64px; background: #F5B700; border: 2px solid #17181C; border-radius: 50%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px">5</div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em">The campaign</h3>
-<p style="margin: 0">Doors, phones, signs, debates, reporters. Weeks of it, and every day there is more to do than time to do it.</p>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em" data-i18n="s5.h">The campaign</h3>
+<p style="margin: 0" data-i18n="s5.you">Doors, phones, signs, debates, reporters. Weeks of it, and every day there is more to do than time to do it.</p>
 </div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57">Where I come in</div>
-<p style="margin: 0">I decide with you which doors and which voters come first, track who is with you, and get you ready for debates and interviews.</p>
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57" data-i18n="lab">Where I come in</div>
+<p style="margin: 0" data-i18n="s5.me">I decide with you which doors and which voters come first, track who is with you, and get you ready for debates and interviews.</p>
 </div>
 </li>
 <li style="display: flex; flex-wrap: wrap; gap: 20px 40px; padding: 36px 0; border-bottom: 2px solid #17181C">
 <div aria-hidden="true" style="flex: 0 0 64px; height: 64px; background: #17181C; color: #FFFFFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px">6</div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em">Election day</h3>
-<p style="margin: 0">Everything comes down to whether the people who said yes at the door actually vote.</p>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.015em" data-i18n="s6.h">Election day</h3>
+<p style="margin: 0" data-i18n="s6.you">Everything comes down to whether the people who said yes at the door actually vote.</p>
 </div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57">Where I come in</div>
-<p style="margin: 0">I run the get-out-the-vote operation from the advance polls until the last one closes.</p>
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4D57" data-i18n="lab">Where I come in</div>
+<p style="margin: 0" data-i18n="s6.me">I run the get-out-the-vote operation from the advance polls until the last one closes.</p>
 </div>
 </li>
 </ol>
-<p style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px">Already partway down the road? <a href="#contact">Tell me where you are</a> and we start from there.</p>
+<p style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px" data-i18n-html="j.next">Already partway down the road? <a href="#contact">Tell me where you are</a> and we start from there.</p>
 </section>
 
 <section id="help" style="background: #ECEBE6">
 <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 44px">
 <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start; max-width: 780px">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; background: #F5B700; padding: 6px 12px">How I help</span>
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.02; letter-spacing: -0.03em">Wherever you are, I can meet you there</h2>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; background: #F5B700; padding: 6px 12px" data-i18n="h.tag">How I help</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.02; letter-spacing: -0.03em" data-i18n="h.h2">Wherever you are, I can meet you there</h2>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px">
 <div style="background: #FFFFFF; border: 2px solid #17181C; padding: 32px; display: flex; flex-direction: column; gap: 12px">
-<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.015em">You have never run before</h3>
-<p style="margin: 0">I walk you through all of it, in plain language, starting with whether you should run at all.</p>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.015em" data-i18n="c1.h">You have never run before</h3>
+<p style="margin: 0" data-i18n="c1.p">I walk you through all of it, in plain language, starting with whether you should run at all.</p>
 </div>
 <div style="background: #FFFFFF; border: 2px solid #17181C; padding: 32px; display: flex; flex-direction: column; gap: 12px">
-<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.015em">Your campaign is already moving</h3>
-<p style="margin: 0">I step in where you are short: the field plan, the message, the turnout operation, or a second opinion.</p>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.015em" data-i18n="c2.h">Your campaign is already moving</h3>
+<p style="margin: 0" data-i18n="c2.p">I step in where you are short: the field plan, the message, the turnout operation, or a second opinion.</p>
 </div>
 <div style="background: #FFFFFF; border: 2px solid #17181C; padding: 32px; display: flex; flex-direction: column; gap: 12px">
-<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.015em">You need the right people</h3>
-<p style="margin: 0">I connect campaigns to each other, and to the organizers, volunteers and specialists I trust.</p>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.015em" data-i18n="c3.h">You need the right people</h3>
+<p style="margin: 0" data-i18n="c3.p">I connect campaigns to each other, and to the organizers, volunteers and specialists I trust.</p>
 </div>
 </div>
 </div>
@@ -168,8 +176,8 @@ a{color:#17181C}a:hover{color:#4A4D57}
 
 <section id="campaigns" style="max-width: 1160px; margin: 0 auto; padding: 104px 24px 96px; display: flex; flex-direction: column; gap: 44px">
 <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start; max-width: 780px">
-<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; background: #F5B700; padding: 6px 12px">Campaigns</span>
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.02; letter-spacing: -0.03em">People I have stood beside</h2>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; background: #F5B700; padding: 6px 12px" data-i18n="camp.tag">Campaigns</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.02; letter-spacing: -0.03em" data-i18n="camp.h2">People I have stood beside</h2>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px">
 <article style="border-top: 6px solid #17181C; padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
@@ -197,28 +205,28 @@ a{color:#17181C}a:hover{color:#4A4D57}
 <section id="contact" style="background: #17181C; color: #FFFFFF">
 <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 56px">
 <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(38px, 5.2vw, 68px); line-height: 0.98; letter-spacing: -0.035em">Thinking about running? Talk to me first.</h2>
-<p style="margin: 0; font-size: 21px; max-width: 480px; color: #E9E8E3">No pitch and no invoice. Tell me what you want to change and where you want to run, and I will tell you what I see.</p>
-<p style="margin: 0; font-size: 19px; color: #E9E8E3">Or write to me directly: <a href="mailto:alexmtaichi@gmail.com" style="color: #FFFFFF; font-weight: 600">alexmtaichi@gmail.com</a></p>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(38px, 5.2vw, 68px); line-height: 0.98; letter-spacing: -0.035em" data-i18n="k.h2">Thinking about running? Talk to me first.</h2>
+<p style="margin: 0; font-size: 21px; max-width: 480px; color: #E9E8E3" data-i18n="k.p">No pitch and no invoice. Tell me what you want to change and where you want to run, and I will tell you what I see.</p>
+<p style="margin: 0; font-size: 19px; color: #E9E8E3" data-i18n-html="k.direct">Or write to me directly: <a href="mailto:alexmtaichi@gmail.com" style="color: #FFFFFF; font-weight: 600">alexmtaichi@gmail.com</a></p>
 </div>
 <form id="contact-form" data-email="alexmtaichi@gmail.com" style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; color: #17181C; padding: 36px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px; font-family: 'Bricolage Grotesque', sans-serif">
 <div style="display: flex; flex-direction: column; gap: 8px">
-<label for="f-name" style="font-size: 16px; font-weight: 700">Your name</label>
+<label for="f-name" style="font-size: 16px; font-weight: 700" data-i18n="f.name">Your name</label>
 <input id="f-name" name="name" type="text" autocomplete="name" required style="font: inherit; padding: 13px 14px; border: 2px solid #17181C; min-height: 50px; box-sizing: border-box">
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<label for="f-email" style="font-size: 16px; font-weight: 700">Email</label>
+<label for="f-email" style="font-size: 16px; font-weight: 700" data-i18n="f.email">Email</label>
 <input id="f-email" name="email" type="email" autocomplete="email" required style="font: inherit; padding: 13px 14px; border: 2px solid #17181C; min-height: 50px; box-sizing: border-box">
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<label for="f-race" style="font-size: 16px; font-weight: 700">What are you running for, or thinking about?</label>
+<label for="f-race" style="font-size: 16px; font-weight: 700" data-i18n="f.race">What are you running for, or thinking about?</label>
 <input id="f-race" name="race" type="text" style="font: inherit; padding: 13px 14px; border: 2px solid #17181C; min-height: 50px; box-sizing: border-box">
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<label for="f-msg" style="font-size: 16px; font-weight: 700">Where are you on the road?</label>
+<label for="f-msg" style="font-size: 16px; font-weight: 700" data-i18n="f.msg">Where are you on the road?</label>
 <textarea id="f-msg" name="message" rows="4" style="font: inherit; padding: 13px 14px; border: 2px solid #17181C; box-sizing: border-box; resize: vertical"></textarea>
 </div>
-<button type="submit" style="font: inherit; font-weight: 700; font-size: 18px; background: #F5B700; color: #17181C; border: 2px solid #17181C; border-radius: 999px; padding: 16px 24px; min-height: 54px; cursor: pointer">Send it to Alexander</button>
+<button type="submit" style="font: inherit; font-weight: 700; font-size: 18px; background: #F5B700; color: #17181C; border: 2px solid #17181C; border-radius: 999px; padding: 16px 24px; min-height: 54px; cursor: pointer" data-i18n="f.send">Send it to Alexander</button>
 </form>
 </div>
 </section>
@@ -229,26 +237,138 @@ a{color:#17181C}a:hover{color:#4A4D57}
 <div style="display: flex; flex-wrap: wrap; gap: 24px">
 <a href="#top" style="color: #C9C8C2; padding: 12px 0">[LINKEDIN]</a>
 <a href="#top" style="color: #C9C8C2; padding: 12px 0">[SOCIAL]</a>
-<a href="#top" style="color: #C9C8C2; padding: 12px 0">Privacy</a>
+<a href="#top" style="color: #C9C8C2; padding: 12px 0" data-i18n="foot.privacy">Privacy</a>
 </div>
 <div>© 2026 Alexander McCrea</div>
 </div>
 <div style="max-width: 1160px; margin: 0 auto; padding: 0 24px 28px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; color: #C9C8C2; border-top: 1px solid #2E3038">
-<p style="margin: 0; padding-top: 18px">This website is maintained by <strong style="color: #FFFFFF; font-weight: 700">King Legend Venture Studios</strong>.</p>
+<p style="margin: 0; padding-top: 18px" data-i18n-html="foot.credit">This website is maintained by <strong style="color: #FFFFFF; font-weight: 700">King Legend Venture Studios</strong>.</p>
 </div>
 </footer>
 
 </div>
 <script>
 (function () {
+  // French copy. English lives in the markup above and is read from it at load.
+  var FR = {
+    'nav.story': 'Ma motivation',
+    'nav.journey': 'Le chemin vers le jour du vote',
+    'nav.help': 'Mon aide',
+    'nav.campaigns': 'Campagnes',
+    'nav.cta': 'Parlons-en',
+    'hero.tag': 'Campagnes de centre gauche',
+    'hero.h1': 'Vous voulez vous présenter. Faisons-vous élire.',
+    'hero.p': 'Je suis Alexander McCrea. Je me spécialise dans les campagnes de centre gauche et j’accompagne les candidates et candidats, du « je devrais peut-être me présenter » jusqu’au soir de l’élection.',
+    'hero.b1': 'Parlez-moi de votre course',
+    'hero.b2': 'Voir le chemin à parcourir',
+    'story.tag': 'Mon histoire',
+    'story.h2': 'Ma motivation',
+    'story.creed': 'Chaque jour, de bonnes personnes se convainquent de ne pas se présenter. Mon travail, c’est de faire en sorte que celles qui devraient se lancer le fassent, et qu’elles ne le fassent pas seules.',
+    'j.tag': 'Le chemin vers le jour du vote',
+    'j.h2': 'Du « devrais-je me présenter? » au soir de l’élection',
+    'j.p': 'Toutes les candidatures suivent le même chemin. Voici chaque étape, ce qu’elle exige de vous et le rôle que j’y joue.',
+    'lab': 'Mon rôle',
+    's1.h': 'Décider de se présenter',
+    's1.you': 'Une cause vous tient assez à cœur pour mettre votre nom sur un bulletin de vote. Vous ne savez pas si vous pouvez gagner, ni ce que cela vous coûtera.',
+    's1.me': 'Un portrait honnête de la course : est-elle gagnable, et qu’exige-t-elle en temps, en argent et de votre famille?',
+    's2.h': 'Choisir sa voie',
+    's2.you': 'Un parti, ou votre propre programme. Lequel correspond à vos convictions, et lequel vous ouvre un vrai chemin vers le siège?',
+    's2.me': 'Nous pesons les options ensemble, puis je vous présente les organisateurs et les associations locales à connaître.',
+    's3.h': 'Remporter l’investiture',
+    's3.you': 'Avant les électeurs, ce sont les membres qui vous choisissent. Il faut donc recruter des membres et les amener dans la salle le soir du vote.',
+    's3.me': 'La campagne d’adhésion, le décompte et un plan de mobilisation pour le soir de l’investiture. Vous vous présentez comme indépendant? Nous passons directement à l’étape 4.',
+    's4.h': 'Bâtir votre équipe',
+    's4.you': 'Une direction de campagne, quelqu’un pour gérer l’argent, des bénévoles, et une raison de voter pour vous qui se dit d’un seul souffle.',
+    's4.me': 'Je vous aide à trouver les bonnes personnes, à rédiger le plan et le budget, et à façonner un récit qui vous ressemble.',
+    's5.h': 'La campagne',
+    's5.you': 'Porte-à-porte, appels, pancartes, débats, journalistes. Des semaines durant, et chaque jour il y a plus à faire que de temps pour le faire.',
+    's5.me': 'Je décide avec vous quelles portes et quels électeurs passent en premier, je fais le suivi de vos appuis et je vous prépare aux débats et aux entrevues.',
+    's6.h': 'Le jour du vote',
+    's6.you': 'Tout se joue sur une chose : les gens qui vous ont dit oui sur le pas de leur porte iront-ils vraiment voter?',
+    's6.me': 'Je dirige l’opération de sortie du vote, du vote par anticipation jusqu’à la fermeture du dernier bureau.',
+    'j.next': 'Déjà en chemin? <a href="#contact">Dites-moi où vous en êtes</a> et nous partons de là.',
+    'h.tag': 'Mon aide',
+    'h.h2': 'Où que vous en soyez, je vous rejoins',
+    'c1.h': 'Vous ne vous êtes jamais présenté',
+    'c1.p': 'Je vous guide à travers tout le processus, en termes simples, à commencer par la question de savoir si vous devriez vous présenter.',
+    'c2.h': 'Votre campagne est déjà lancée',
+    'c2.p': 'J’interviens là où il vous manque quelque chose : le plan de terrain, le message, la sortie du vote ou un deuxième avis.',
+    'c3.h': 'Vous cherchez les bonnes personnes',
+    'c3.p': 'Je mets les campagnes en lien entre elles, et avec les organisateurs, les bénévoles et les spécialistes en qui j’ai confiance.',
+    'camp.tag': 'Campagnes',
+    'camp.h2': 'Les personnes que j’ai accompagnées',
+    'k.h2': 'Vous songez à vous présenter? Parlez-moi d’abord.',
+    'k.p': 'Pas de discours de vente, pas de facture. Dites-moi ce que vous voulez changer et où vous voulez vous présenter, et je vous dirai ce que je vois.',
+    'k.direct': 'Ou écrivez-moi directement : <a href="mailto:alexmtaichi@gmail.com" style="color: #FFFFFF; font-weight: 600">alexmtaichi@gmail.com</a>',
+    'f.name': 'Votre nom',
+    'f.email': 'Courriel',
+    'f.race': 'À quel poste vous présentez-vous, ou songez-vous à le faire?',
+    'f.msg': 'Où en êtes-vous sur le chemin?',
+    'f.send': 'Envoyer à Alexander',
+    'foot.privacy': 'Confidentialité',
+    'foot.credit': 'Ce site est entretenu par <strong style="color: #FFFFFF; font-weight: 700">King Legend Venture Studios</strong>.'
+  };
+  var META = {
+    en: { title: document.title, desc: document.querySelector('meta[name="description"]').content },
+    fr: {
+      title: 'Alexander McCrea — Organisateur de campagnes de centre gauche',
+      desc: 'Alexander McCrea se spécialise dans les campagnes de centre gauche et accompagne les candidates et candidats, de la décision de se présenter jusqu’au soir de l’élection.'
+    }
+  };
+  // Labels for the email the contact form opens.
+  var MAIL = {
+    en: { subject: 'Thinking about running', name: 'Name', email: 'Email', race: 'Running for' },
+    fr: { subject: 'Je songe à me présenter', name: 'Nom', email: 'Courriel', race: 'Poste visé' }
+  };
+
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-i18n],[data-i18n-html]'));
+  var EN = {};
+  nodes.forEach(function (n) {
+    var html = n.hasAttribute('data-i18n-html');
+    EN[html ? n.getAttribute('data-i18n-html') : n.getAttribute('data-i18n')] = html ? n.innerHTML : n.textContent;
+  });
+  window.__i18nMissing = Object.keys(EN).filter(function (k) { return !(k in FR); });
+
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.lang button'));
+  var current = 'en';
+
+  function setLang(lang, remember) {
+    current = lang === 'fr' ? 'fr' : 'en';
+    var dict = current === 'fr' ? FR : EN;
+    document.documentElement.lang = current;
+    nodes.forEach(function (n) {
+      var html = n.hasAttribute('data-i18n-html');
+      var key = html ? n.getAttribute('data-i18n-html') : n.getAttribute('data-i18n');
+      var text = key in dict ? dict[key] : EN[key];
+      if (html) n.innerHTML = text; else n.textContent = text;
+    });
+    document.title = META[current].title;
+    document.querySelector('meta[name="description"]').content = META[current].desc;
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === current)); });
+    if (remember) { try { localStorage.setItem('lang', current); } catch (e) {} }
+  }
+
+  // Start in: ?lang= in the address, else the visitor's last choice, else the browser's language.
+  var start = null;
+  var q = /[?&]lang=(en|fr)\b/.exec(location.search);
+  if (q) start = q[1];
+  if (!start) { try { start = localStorage.getItem('lang'); } catch (e) {} }
+  if (!start) start = /^fr\b/i.test(navigator.language || '') ? 'fr' : 'en';
+  setLang(start, false);
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-lang'), true); });
+  });
+
   var form = document.getElementById('contact-form');
   if (!form) return;
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    var m = MAIL[current];
     var to = form.getAttribute('data-email') || '';
     var v = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
-    var subject = 'Thinking about running' + (v('f-race') ? ': ' + v('f-race') : '');
-    var lines = ['Name: ' + v('f-name'), 'Email: ' + v('f-email'), 'Running for: ' + v('f-race'), '', v('f-msg')];
+    var subject = m.subject + (v('f-race') ? ': ' + v('f-race') : '');
+    var lines = [m.name + ': ' + v('f-name'), m.email + ': ' + v('f-email'), m.race + ': ' + v('f-race'), '', v('f-msg')];
     window.location.href = 'mailto:' + encodeURIComponent(to) +
       '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
   });
