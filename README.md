@@ -9,7 +9,6 @@ Static site: one HTML page, one image, no build step.
 |---|---|
 | `index.html` | The live homepage. Plain HTML + inline CSS, Google Fonts (Bricolage Grotesque, Source Serif 4). |
 | `assets/alexander-mccrea.jpg` | Portrait used in the hero. 1000×1000 square headshot. |
-| `assets/art/` | Five paintings by Saali, shown in the "Art" gallery section (added 2026-10-30; originals came from Downloads, `image000000`–`000004`). |
 | `design/Main.dc.html` | The homepage artboard as authored in the Claude Design canvas. Source of truth for layout and copy; `index.html` is derived from it. |
 | `design/canvas.json` | Canvas index for that artboard. |
 | `design/alexmcrae-preview.png` | Screenshot of a later rendering of the hero (shows the photo, an EN/FR toggle and different nav labels — see "Known gaps"). |
